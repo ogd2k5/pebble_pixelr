@@ -169,16 +169,16 @@ static void handle_second_tick(struct tm* tick_time, TimeUnits units_changed)
 	strftime(year, sizeof(year), "%y", tick_time);
 	text_layer_set_text(year_layer, year);
 
-	// Samples the battery status every 30 minutes
+	// Samples the battery status every 50 minutes
 	curr_mins = (*tick_time).tm_min;
-	if (curr_mins % 30 == 0)
+	if (curr_mins % 50 == 0)
 	{
 		handle_battery(battery_state_service_peek());
 	}
 
-	// Samples the bluetooth status every 2 seconds
+	// Samples the bluetooth status every 7 seconds
 	curr_secs = (*tick_time).tm_sec;
-	if (curr_secs % 2 == 0)
+	if (curr_secs % 7 == 0)
 	{
 		handle_bluetooth(bluetooth_connection_service_peek());
 	}
