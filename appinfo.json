@@ -1,0 +1,40 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "ogd2k5@gmail.com",
+    "longName": "PixelR",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "fonts/mini_pixel.TTF",
+                "name": "MINI_PIXEL_10",
+                "type": "font"
+            },
+            {
+                "file": "images/bluetooth_disconn.png",
+                "name": "BLUETOOTH_DISCONNECTED_IMAGE",
+                "type": "png-trans"
+            },
+            {
+                "file": "images/bluetooth_conn.png",
+                "name": "BLUETOOTH_CONNECTED_IMAGE",
+                "type": "png-trans"
+            },
+            {
+                "file": "fonts/pixel.TTF",
+                "name": "PIXEL_FONT_34",
+                "type": "font"
+            }
+        ]
+    },
+    "shortName": "PixelR",
+    "uuid": "6d61822c-7e7b-4c9f-ba8f-faae80d991bb",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
