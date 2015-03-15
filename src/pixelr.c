@@ -17,6 +17,9 @@ static GBitmap *bluetooth_connected_image;
 static GBitmap *bluetooth_disconnected_image;
 static BitmapLayer *bluetooth_layer;
 
+// Defining Debug Flag For Development
+bool debug = true;
+
 // Defining Functions
 static void handle_second_tick(struct tm*, TimeUnits);
 static void handle_battery(BatteryChargeState);
@@ -87,7 +90,7 @@ static void do_init(void)
 	bluetooth_connection_service_subscribe(&handle_bluetooth);
 
 	layer_add_child(root_layer, text_layer_get_layer(hours_layer));
-	//layer_add_child(root_layer, text_layer_get_layer(mins_layer));
+	layer_add_child(root_layer, text_layer_get_layer(mins_layer));
 	//layer_add_child(root_layer, text_layer_get_layer(secs_layer));
 	layer_add_child(root_layer, text_layer_get_layer(date_layer));
 	layer_add_child(root_layer, bitmap_layer_get_layer(bluetooth_layer));
@@ -146,20 +149,23 @@ static void handle_second_tick(struct tm* tick_time, TimeUnits units_changed)
 	static char secs[] = "00"; // Needs to be static because it's used by the system later.
 	static char date[] = "00-00-00"; // Needs to be static because it's used by the system later.
 
-	//strftime(hours, sizeof(hours), "%H", tick_time);
-	snprintf(hours, sizeof(hours), "88");
+	if (debug)
+	{
+		snprintf(hours, sizeof(hours), "88");
+		snprintf(mins, sizeof(mins), "88");
+		snprintf(secs, sizeof(secs), "88");
+		snprintf(date, sizeof(date), "88-88-88");
+	}
+	else
+	{
+		strftime(hours, sizeof(hours), "%H", tick_time);
+		strftime(mins, sizeof(mins), "%M", tick_time);
+		strftime(secs, sizeof(secs), "%S", tick_time);
+		strftime(date, sizeof(date), "%d-%m-%y", tick_time);
+	}
 	text_layer_set_text(hours_layer, hours);
-
-	//strftime(mins, sizeof(mins), "%M", tick_time);
-	snprintf(mins, sizeof(mins), "88");
 	text_layer_set_text(mins_layer, mins);
-
-	//strftime(secs, sizeof(secs), "%S", tick_time);
-	snprintf(secs, sizeof(secs), "88");
 	text_layer_set_text(secs_layer, secs);
-
-	//strftime(date, sizeof(date), "%d-%m-%y", tick_time);
-	snprintf(date, sizeof(date), "88-88-88");
 	text_layer_set_text(date_layer, date);
 
 	// Samples the battery status every 50 minutes
