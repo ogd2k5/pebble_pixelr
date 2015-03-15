@@ -9,11 +9,6 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/mini_pixel.TTF",
-                "name": "MINI_PIXEL_10",
-                "type": "font"
-            },
-            {
                 "file": "images/bluetooth_disconn.png",
                 "name": "BLUETOOTH_DISCONNECTED_IMAGE",
                 "type": "png-trans"
@@ -25,11 +20,32 @@
             },
             {
                 "file": "fonts/pixel.TTF",
-                "name": "PIXEL_FONT_34",
+                "name": "PIXEL_FONT_48",
+                "type": "font"
+            },
+            {
+                "file": "fonts/pixel.TTF",
+                "name": "PIXEL_FONT_40",
+                "type": "font"
+            },
+            {
+                "file": "fonts/pixel.TTF",
+                "name": "PIXEL_FONT_32",
+                "type": "font"
+            },
+            {
+                "file": "fonts/pixel.TTF",
+                "name": "PIXEL_FONT_18",
+                "type": "font"
+            },
+            {
+                "file": "fonts/pixel.TTF",
+                "name": "PIXEL_FONT_10",
                 "type": "font"
             }
         ]
     },
+    "sdkVersion": "2",
     "shortName": "PixelR",
     "uuid": "6d61822c-7e7b-4c9f-ba8f-faae80d991bb",
     "versionCode": 1,
